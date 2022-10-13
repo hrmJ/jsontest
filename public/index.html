@@ -1,0 +1,11 @@
+<html>
+  <button onClick="load('test.json')">PRoper file</button>
+  <button onClick="load('rubbish.json')">Rubbish</button>
+  <script>
+    async function load(fname) {
+      const file = await fetch(`/${fname}`);
+      const json = await file.json();
+      console.log(json, fname);
+    }
+  </script>
+</html>
